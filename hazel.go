@@ -23,8 +23,12 @@ func main() {
 			matches := re_job.FindStringSubmatch(j)
 			// matches = matches[1:]
 
-		}
-	}
+			var id string = matches[1]
+			var timestamp string = matches[2]
+			// var queue string = matches[3]
+			// var username string = matches[4]
+			var command string = getJobInfo(id)
+
 		}
 	}
 }
