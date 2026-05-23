@@ -76,6 +76,12 @@ func main() {
 		}
 		return 0
 	})
+
+	re_invalid, err := regexp.Compile(`^\d+`)
+
+	if err != nil {
+		slog.Error("failed to compile regex", "err", err)
+	}
 		}
 	}
 }
