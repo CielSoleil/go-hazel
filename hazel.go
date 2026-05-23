@@ -12,4 +12,9 @@ func main() {
 	// Each resulting string looks like this
 	// 11528   1779418800 a applejack
 
+	re_job, err := regexp.Compile(`(\d+)\s+(\d+)\s+(\w+)\s+(\w+)`)
+
+	if err != nil {
+		slog.Error("failed to compile regex", "err", err)
+	}
 }
