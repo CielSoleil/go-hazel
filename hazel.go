@@ -17,4 +17,14 @@ func main() {
 	if err != nil {
 		slog.Error("failed to compile regex", "err", err)
 	}
+	// Parse each job and get its data
+	for _, j := range jobsSplit {
+		if re_job.MatchString(j) {
+			matches := re_job.FindStringSubmatch(j)
+			// matches = matches[1:]
+
+		}
+	}
+		}
+	}
 }
