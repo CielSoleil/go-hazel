@@ -86,6 +86,12 @@ func main() {
 		// Time conversion
 		t := time.Unix(p[1].(int64), 0)
 
+		// Load local timezone
+		loc, err := time.LoadLocation("America/Mexico_City")
+
+		if err != nil {
+			slog.Error("fail to load location", "err", err)
+		}
 		}
 	}
 }
