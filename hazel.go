@@ -1,4 +1,24 @@
 package main
+func getJobInfo(jobId string) string {
+	jobInfo, err := exec.Command("at", "-c", jobId).Output()
+
+	if err != nil {
+		slog.Error("failed to fetch job data", "err", err)
+	}
+
+	jobInfoSplit := strings.Split(string(jobInfo), "\n")
+
+	jobInfoSplit = slices.DeleteFunc(jobInfoSplit, func(e string) bool {
+		return e == ""
+	})
+
+	commandIssued := jobInfoSplit[len(jobInfoSplit)-1]
+
+	// fmt.Printf("Last line is \"%s\"\n", commandIssued)
+
+	return commandIssued
+
+}
 
 func main() {
 	jobs, err := exec.Command("atq", "-o", "%s").Output()
