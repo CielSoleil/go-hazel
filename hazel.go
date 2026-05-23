@@ -92,6 +92,13 @@ func main() {
 		if err != nil {
 			slog.Error("fail to load location", "err", err)
 		}
+
+		// Load Tokyo timezone
+		tokyo, err := time.LoadLocation("Asia/Tokyo")
+
+		if err != nil {
+			slog.Error("fail to load location", "err", err)
+		}
 		}
 	}
 }
