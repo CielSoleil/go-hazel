@@ -29,6 +29,12 @@ func main() {
 			// var username string = matches[4]
 			var command string = getJobInfo(id)
 
+			cTimestamp, err := strconv.ParseInt(timestamp, 10, 64)
+
+			if err != nil {
+				slog.Error("failed to convert", "err", err)
+			}
+
 		}
 	}
 }
