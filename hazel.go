@@ -82,6 +82,10 @@ func main() {
 	if err != nil {
 		slog.Error("failed to compile regex", "err", err)
 	}
+	for _, p := range parsedJobs {
+		// Time conversion
+		t := time.Unix(p[1].(int64), 0)
+
 		}
 	}
 }
