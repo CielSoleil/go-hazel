@@ -99,6 +99,10 @@ func main() {
 		if err != nil {
 			slog.Error("fail to load location", "err", err)
 		}
+
+		timeLocal := t.In(loc).Format("06 Mon 02 15:04")
+		timeTokyo := t.In(tokyo).Format("06 Mon 02 15:04")
+
 		}
 	}
 }
