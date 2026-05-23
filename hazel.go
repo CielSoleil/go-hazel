@@ -63,6 +63,19 @@ func main() {
 		}
 	}
 
+	// Sorter kindly given by Gemini
+	slices.SortFunc(parsedJobs, func(a, b []any) int {
+		valA := a[1].(int64)
+		valB := b[1].(int64)
+
+		if valA < valB {
+			return -1
+		}
+		if valA > valB {
+			return 1
+		}
+		return 0
+	})
 		}
 	}
 }
