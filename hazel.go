@@ -21,6 +21,9 @@ func getJobInfo(jobId string) string {
 }
 
 func main() {
+	outFormat := flag.String("format", "cont", "Either \"org\" or \"cont\"")
+	flag.Parse()
+
 	jobs, err := exec.Command("atq", "-o", "%s").Output()
 
 	if err != nil {
