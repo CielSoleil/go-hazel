@@ -9,3 +9,6 @@ INSTALL_DIR = $(PREFIX)/bin
 build:
 	go build -o $(BUILDDIR)/$(EXEC) $(GOFILE)
 
+clean:
+	rm $(BUILDDIR)/$(EXEC)
+
