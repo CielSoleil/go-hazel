@@ -6,4 +6,10 @@ func main() {
 	if err != nil {
 		slog.Error("failed to fetch jobs list", "err", err)
 	}
+
+	jobsSplit := strings.Split(string(jobs), "\n")
+
+	// Each resulting string looks like this
+	// 11528   1779418800 a applejack
+
 }
