@@ -103,6 +103,8 @@ func main() {
 		timeLocal := t.In(loc).Format("06 Mon 02 15:04")
 		timeTokyo := t.In(tokyo).Format("06 Mon 02 15:04")
 
+		if !re_invalid.MatchString(p[len(p)-1].(string)) {
+			fmt.Printf("|%s|%s|%s|%s||\n", p[0], timeTokyo, timeLocal, p[len(p)-1])
 		}
 	}
 }
