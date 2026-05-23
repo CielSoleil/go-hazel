@@ -17,6 +17,9 @@ func main() {
 	if err != nil {
 		slog.Error("failed to compile regex", "err", err)
 	}
+
+	var parsedJobs [][]any
+
 	// Parse each job and get its data
 	for _, j := range jobsSplit {
 		if re_job.MatchString(j) {
@@ -34,6 +37,11 @@ func main() {
 			if err != nil {
 				slog.Error("failed to convert", "err", err)
 			}
+
+			data := []any{id, cTimestamp, command}
+			parsedJobs = append(parsedJobs, data)
+		}
+	}
 
 		}
 	}
